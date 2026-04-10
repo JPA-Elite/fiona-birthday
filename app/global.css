@@ -549,6 +549,188 @@ table {
   overflow: hidden;
 }
 
+.chase-scene.flappy-run {
+  isolation: isolate;
+}
+
+.chase-scene.flappy-run .scene-wash {
+  opacity: 0.55;
+}
+
+.chase-scene.flappy-run.scene-0 .scene-wash {
+  background: linear-gradient(180deg, rgba(130, 225, 255, 0.38), rgba(255, 230, 140, 0.18));
+}
+
+.chase-scene.flappy-run.scene-1 .scene-wash {
+  background: linear-gradient(180deg, rgba(180, 255, 221, 0.34), rgba(255, 205, 140, 0.2));
+}
+
+.chase-scene.flappy-run.scene-2 .scene-wash {
+  background: linear-gradient(180deg, rgba(255, 188, 139, 0.36), rgba(255, 146, 196, 0.18));
+}
+
+.chase-scene.flappy-run.scene-3 .scene-wash {
+  background: linear-gradient(180deg, rgba(193, 166, 255, 0.38), rgba(123, 255, 229, 0.2));
+}
+
+.flappy-scroll {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.scroll-layer {
+  position: absolute;
+  left: -120%;
+  right: -120%;
+  pointer-events: none;
+}
+
+.scroll-layer.clouds {
+  top: 18%;
+  height: 24%;
+  background:
+    radial-gradient(circle at 18% 48%, rgba(255, 255, 255, 0.72) 0 7%, transparent 8%),
+    radial-gradient(circle at 35% 55%, rgba(255, 255, 255, 0.66) 0 8%, transparent 9%),
+    radial-gradient(circle at 54% 44%, rgba(255, 255, 255, 0.64) 0 7%, transparent 8%),
+    radial-gradient(circle at 70% 54%, rgba(255, 255, 255, 0.68) 0 8%, transparent 9%);
+  animation: flappyClouds 12s linear infinite;
+}
+
+.scroll-layer.hills {
+  bottom: 23%;
+  height: 22%;
+  background:
+    radial-gradient(70% 120% at 20% 100%, rgba(37, 201, 146, 0.72), transparent 72%),
+    radial-gradient(72% 128% at 48% 100%, rgba(52, 176, 235, 0.68), transparent 74%),
+    radial-gradient(70% 130% at 75% 100%, rgba(115, 214, 127, 0.72), transparent 73%);
+  animation: flappyHills 6.8s linear infinite;
+}
+
+.scroll-layer.skyline {
+  bottom: 22%;
+  height: 14%;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      rgba(26, 143, 120, 0.6) 0 20px,
+      rgba(26, 143, 120, 0.22) 20px 32px,
+      rgba(26, 143, 120, 0.56) 32px 48px
+    );
+  animation: flappySkyline 3.6s linear infinite;
+}
+
+.flappy-pipes {
+  position: absolute;
+  inset: 14% -10% 20% -10%;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.pipe-set {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: clamp(52px, 7vw, 74px);
+  transform: translateX(-50%);
+}
+
+.pipe {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  border: 3px solid #125c20;
+  background:
+    linear-gradient(90deg, #71df65 0%, #35c95b 45%, #1e9d47 100%),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.24) 0 8px, transparent 8px 16px);
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.2), 0 10px 20px rgba(12, 70, 45, 0.26);
+}
+
+.pipe-top {
+  top: 0;
+}
+
+.pipe-bottom {
+  bottom: 0;
+}
+
+.pipe-cap {
+  position: absolute;
+  left: -6px;
+  width: calc(100% + 12px);
+  height: 16px;
+  border: 3px solid #125c20;
+  background: linear-gradient(90deg, #8bf47c 0%, #4ed36d 60%, #20aa52 100%);
+}
+
+.pipe-cap-top {
+  transform: translateY(-100%);
+}
+
+.pipe-cap-bottom {
+  transform: translateY(100%);
+}
+
+.chase-scene.flappy-run .stage-road {
+  left: -16%;
+  right: -16%;
+  bottom: -3%;
+  height: 24%;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      rgba(10, 111, 84, 0.64) 0 26px,
+      rgba(23, 157, 107, 0.64) 26px 52px
+    ),
+    linear-gradient(180deg, #61dc76 0%, #1fc188 55%, #0f936f 100%);
+  transform: none;
+  animation: flappyGround 0.7s linear infinite;
+}
+
+.birthday-chase .chase-scene.flappy-run .character-chaser,
+.birthday-chase .chase-scene.flappy-run .character-runner {
+  animation: none !important;
+}
+
+.birthday-chase .chase-scene.flappy-run .character {
+  width: clamp(76px, 10.8vw, 118px);
+  min-width: 76px;
+  max-width: min(20vw, 118px);
+  z-index: 6;
+  transition:
+    bottom 0.14s linear,
+    left 0.14s linear,
+    transform 0.14s linear;
+}
+
+.chase-scene.flappy-run .photo-wrap {
+  border-width: 4px;
+  box-shadow: 0 12px 0 rgba(33, 22, 24, 0.14), 0 14px 24px rgba(33, 22, 24, 0.24);
+}
+
+.birthday-chase .chase-scene.flappy-run .photo-wrap img {
+  object-fit: cover;
+}
+
+.birthday-chase .chase-scene.flappy-run .chaser-photo,
+.birthday-chase .chase-scene.flappy-run .runner-photo {
+  animation: flappyBob 0.46s ease-in-out infinite;
+}
+
+.chase-scene.flappy-run.near-miss {
+  animation: flappyShake 0.18s ease-out;
+}
+
+.birthday-finale .chase-scene.flappy-run .character-chaser,
+.birthday-finale .chase-scene.flappy-run .character-runner {
+  animation: none !important;
+  transition:
+    bottom 0.72s ease-out,
+    left 0.72s cubic-bezier(0.1, 1, 0.2, 1),
+    transform 0.72s ease-out;
+}
+
 .chase-scene.temple-run {
   perspective: 1200px;
 }
@@ -868,48 +1050,6 @@ table {
   transform: translateY(9px) rotate(-4deg) scaleY(0.87);
 }
 
-.smile-mouth {
-  position: absolute;
-  left: 51%;
-  top: 64%;
-  width: 52px;
-  height: 24px;
-  border-radius: 0 0 28px 28px;
-  background: linear-gradient(180deg, #8a001f 0%, #d4113f 52%, #ff4f86 100%);
-  box-shadow: 0 0 0 3px #ffd06d, 0 0 0 6px rgba(255, 208, 109, 0.2);
-  transform: rotate(-6deg) scale(0.86);
-  opacity: 0;
-}
-
-.smile-teeth {
-  position: absolute;
-  left: 52%;
-  top: 64.5%;
-  width: 46px;
-  height: 11px;
-  border-radius: 3px 3px 8px 8px;
-  background:
-    repeating-linear-gradient(90deg, transparent 0 8px, #86102d 8px 10px),
-    linear-gradient(180deg, #fff 0%, #f6f6f6 100%);
-  transform: rotate(-6deg) scale(0.86);
-  opacity: 0;
-}
-
-.birthday-chase .smile-mouth {
-  opacity: 1;
-  animation: grinPulse 0.34s ease-in-out infinite;
-}
-
-.birthday-chase .smile-teeth {
-  opacity: 1;
-  animation: grinTeeth 0.34s ease-in-out infinite;
-}
-
-.birthday-finale .smile-mouth,
-.birthday-finale .smile-teeth {
-  opacity: 0;
-}
-
 .birthday-chase .character-chaser {
   animation: chaserPath 20s linear forwards;
 }
@@ -1182,6 +1322,36 @@ table {
   animation: messageReveal 0.7s ease-out both;
 }
 
+.finale-photo-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin: 2px 0 12px;
+}
+
+.finale-mini-photo {
+  width: clamp(72px, 11vw, 98px);
+  aspect-ratio: 1;
+  border: 3px solid #fff;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 8px 0 rgba(33, 22, 24, 0.15), 0 10px 18px rgba(33, 22, 24, 0.22);
+  overflow: hidden;
+  animation: finaleMiniBob 0.9s ease-in-out infinite;
+}
+
+.finale-mini-photo:nth-child(2) {
+  animation-delay: 0.18s;
+}
+
+.finale-mini-photo img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
 .finale-message h1 {
   margin: 0 0 10px;
   font-size: 2rem;
@@ -1256,6 +1426,87 @@ table {
   --burst-x: 90px;
   background: var(--mint);
   animation-delay: 0.48s;
+}
+
+@keyframes flappyClouds {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(32%);
+  }
+}
+
+@keyframes flappyHills {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(46%);
+  }
+}
+
+@keyframes flappySkyline {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(52%);
+  }
+}
+
+@keyframes flappyGround {
+  0% {
+    background-position: 0 0, 0 0;
+  }
+
+  100% {
+    background-position: -120px 0, -60px 0;
+  }
+}
+
+@keyframes flappyBob {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-1.8deg);
+  }
+
+  50% {
+    transform: translateY(-6px) rotate(1.6deg);
+  }
+}
+
+@keyframes finaleMiniBob {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-2deg);
+  }
+
+  50% {
+    transform: translateY(-5px) rotate(2deg);
+  }
+}
+
+@keyframes flappyShake {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  25% {
+    transform: translate(-3px, 1px);
+  }
+
+  50% {
+    transform: translate(2px, -1px);
+  }
+
+  75% {
+    transform: translate(-2px, 1px);
+  }
 }
 
 @keyframes curtainSlideLeft {
@@ -1712,30 +1963,6 @@ table {
   }
 }
 
-@keyframes grinPulse {
-  0%,
-  100% {
-    transform: rotate(-6deg) scale(0.86);
-  }
-
-  50% {
-    transform: rotate(-6deg) scale(1.02);
-  }
-}
-
-@keyframes grinTeeth {
-  0%,
-  100% {
-    transform: rotate(-6deg) scale(0.86);
-    filter: brightness(0.96);
-  }
-
-  50% {
-    transform: rotate(-6deg) scale(1.02);
-    filter: brightness(1.08);
-  }
-}
-
 @keyframes pukeBurst {
   0% {
     transform: scale(0.78) translateX(8px);
@@ -1878,9 +2105,7 @@ table {
   }
 
   .countdown-chip {
-    top: 92px;
-    font-size: 0.85rem;
-    padding: 8px 12px;
+    display: none;
   }
 
   .dodge-chip {
@@ -1891,10 +2116,19 @@ table {
   }
 
   .joy-banner {
-    top: 128px;
-    max-width: 86vw;
-    font-size: 0.9rem;
-    text-align: center;
+    display: none;
+  }
+
+  .flappy-pipes {
+    inset: 18% -10% 24% -10%;
+  }
+
+  .pipe-set {
+    width: clamp(42px, 13vw, 56px);
+  }
+
+  .pipe-cap {
+    height: 12px;
   }
 
   .speech {
@@ -1909,14 +2143,23 @@ table {
   }
 
   .speech-runner {
-    top: 26%;
-    right: 6%;
+    display: none;
   }
 
   .character {
     width: 31vw;
     min-width: 98px;
     bottom: 28%;
+  }
+
+  .birthday-chase .chase-scene.flappy-run .character {
+    width: clamp(62px, 20vw, 88px);
+    min-width: 62px;
+    max-width: 88px;
+    transition:
+      bottom 0.12s linear,
+      left 0.12s linear,
+      transform 0.12s linear;
   }
 
   .chase-scene.temple-run .character {
@@ -1938,16 +2181,6 @@ table {
   .kiss-mouth {
     width: 21px;
     height: 10px;
-  }
-
-  .smile-mouth {
-    width: 36px;
-    height: 17px;
-  }
-
-  .smile-teeth {
-    width: 32px;
-    height: 8px;
   }
 
   .disgust-stamp {
@@ -1977,6 +2210,16 @@ table {
     bottom: 3%;
     max-height: 45svh;
     padding: 16px;
+  }
+
+  .finale-photo-row {
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .finale-mini-photo {
+    width: 72px;
+    border-width: 2px;
   }
 
   .finale-message h1 {
