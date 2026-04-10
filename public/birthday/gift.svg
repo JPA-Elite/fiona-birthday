@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-labelledby="title desc">
+  <title id="title">Birthday gift</title>
+  <desc id="desc">A bright wrapped birthday gift with ribbons and confetti.</desc>
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="26" stdDeviation="24" flood-color="#211618" flood-opacity="0.28"/>
+    </filter>
+    <linearGradient id="box" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#ff5b3d"/>
+      <stop offset="0.48" stop-color="#f0184f"/>
+      <stop offset="1" stop-color="#b40524"/>
+    </linearGradient>
+    <linearGradient id="lid" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0" stop-color="#ff8b63"/>
+      <stop offset="0.5" stop-color="#ffd342"/>
+      <stop offset="1" stop-color="#ff5b3d"/>
+    </linearGradient>
+    <linearGradient id="ribbon" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#fff45d"/>
+      <stop offset="1" stop-color="#ffb52f"/>
+    </linearGradient>
+  </defs>
+
+  <g filter="url(#shadow)">
+    <path fill="#18b8aa" d="M116 520c78-58 163-63 251-16s178 50 270 9c18-8 38 6 37 26l-7 80c-2 18-16 32-34 34l-494 41c-25 2-46-17-46-42v-65c0-27 9-50 23-67Z" opacity="0.28"/>
+    <rect x="171" y="293" width="458" height="350" rx="34" fill="url(#box)"/>
+    <path fill="#d4002d" d="M171 455h458v154c0 19-15 34-34 34H205c-19 0-34-15-34-34V455Z" opacity="0.48"/>
+    <rect x="364" y="293" width="72" height="350" fill="url(#ribbon)"/>
+    <rect x="142" y="236" width="516" height="108" rx="28" fill="url(#lid)"/>
+    <rect x="348" y="236" width="104" height="108" fill="url(#ribbon)"/>
+    <path fill="#ffd342" d="M399 238c-47-20-90-47-113-76-27-34-17-75 21-86 40-11 80 19 102 80 16-64 57-102 101-91 39 10 54 50 33 87-20 35-70 67-144 86Z"/>
+    <path fill="#ff5b3d" d="M384 217c-42-20-70-40-84-60-18-25-9-52 17-59 30-8 62 22 75 111l-8 8Zm38 0c51-17 88-41 104-68 13-22 4-49-20-55-30-8-65 29-84 123Z"/>
+    <path fill="#fff" d="M228 344h96v32h-96zM492 344h86v32h-86z" opacity="0.32"/>
+    <path fill="#65db74" d="m144 203 35-22 30 28-23 35-38-5z"/>
+    <path fill="#18b8aa" d="m641 183 42 8 6 43-37 22-33-25z"/>
+    <path fill="#ffd342" d="m113 355 31-18 28 21-8 35-37 6z"/>
+    <path fill="#fff45d" d="m664 411 30-14 24 23-13 34-35 2z"/>
+    <path fill="#65db74" d="m596 104 30 25-14 35-39-1-11-38z"/>
+  </g>
+</svg>
